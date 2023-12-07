@@ -1,0 +1,48 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #282c34;
+  color: #abb2bf;
+}
+* {
+  margin-bottom: 20px;
+}
+
+a,
+a:visited {
+  color: #61afef;
+}
+
+form {
+  min-width: 300px;
+}
+
+input {
+  width: 100%;
+  border: none;
+  background: #282c34;
+  border-bottom: 1px solid #ccc;
+  color: #abb2bf;
+}
+
+input:focus {
+  outline: none;
+  border-bottom: 1px solid #61afef;
+}
+
+button {
+  background: #61afef;
+  color: #282c34;
+  border: none;
+  padding: 2px 10px;
+  font-size: 15px;
+}
+
+button:hover,
+button:focus {
+  outline: none;
+  filter: brightness(0.75);
+  cursor: pointer;
+}

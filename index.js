@@ -23,10 +23,13 @@ const db = mysql.createPool({
   database: `session_auth`,
 });
 
+// Serve static files
+app.use('/public', express.static('public'));
+
 // Page Routes
 app.get('/', async (req, res) => {
   try {
-    res.sendFile('index.html', { root: __dirname });
+    res.sendFile('/templates/index.html', { root: __dirname });
   } catch (error) {
     console.log(error);
     res.send('There was an error');
@@ -65,7 +68,7 @@ app.get('/profile', async (req, res) => {
     const user = rows[0];
 
     // Create html markup with username variable
-    const buffer = await fs.readFile('./profile.html');
+    const buffer = await fs.readFile('templates/profile.html');
 
     let htmlString = buffer.toString();
 
