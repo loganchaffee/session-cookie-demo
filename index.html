@@ -53,27 +53,18 @@
         <p id="errorMessage" style="display: none">Wrong username or password</a></p>
 
         <script>
-            //-- ---------------------------- Dom Elements ----------------------------- -->
+            // Dom Elements 
             const signUpUsernameInput = document.getElementById('signUpUsername');
-
             const signUpPasswordInput = document.getElementById('signUpPassword');
-
             const signUpButton = document.getElementById('signUpButton');
-
             const signUpMessage = document.getElementById('signUpMessage');
-
             const signInUsernameInput = document.getElementById('signInUsername');
-
             const signInPasswordInput = document.getElementById('signInPassword');
-
             const signInButton = document.getElementById('signInButton');
-
             const signInMessage = document.getElementById('signInMessage');
-
             const errorMessage = document.getElementById('errorMessage');
 
-            //-- ---------------------------- API Functions ---------------------------- -->
-
+            // API Functions
             async function signUp(e) {
                 e.preventDefault();
                 try {
@@ -118,20 +109,21 @@
 
                     if (json.error) {
                         throw new Error(json.error);
-
                     }
 
                     signInMessage.style.display = 'block'
+
                     errorMessage.style.display = 'none'
                 } catch (error) {
                     signInMessage.style.display = 'none'
+
                     errorMessage.style.display = 'block'
+
                     console.log(error);
                 }
             }
 
-            //-- --------------------------- Event Listeners --------------------------- -->
-
+            // Event Listeners 
             signUpButton.addEventListener('click', signUp);
 
             signInButton.addEventListener('click', signIn);
